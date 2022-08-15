@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import TodoList from './components/todo/TodoList';
+import Home from './components/Home';
+import NavBarExample from './layouts/Navbar';
+import Footer from "./components/pok/Footer";
+import Application from "./Application";
+
+const localStorageKey = "favorite_pokemon";
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      
+
+<BrowserRouter>
+<Routes>
+  <Route path='/' element={ <NavBarExample /> }>
+    <Route index element={ <Home /> } />
+    <Route path='todolist' element={ <TodoList />} />
+    <Route path='*' element={ <Navigate replace to="/"/> }/>
+    <Route path='pokemon' element={ <Application />} />
+  </Route>
+</Routes>
+</BrowserRouter>
+<Footer />
     </div>
   );
 }
+
+
 
 export default App;

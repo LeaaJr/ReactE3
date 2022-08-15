@@ -1,3 +1,147 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  background-color:
+  white ;
+}
+.todo-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 520px;
+  min-height: 600px;
+  background: linear-gradient(0deg, rgba(40,184,172,1) 19%, rgba(250,250,250,0.01) 100%);
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+h1 {
+  margin: 32px 0;
+  color: black;
+  font-size: 24px;
+}
+
+.complete {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.todo-form {
+  margin-bottom: 32px;
+}
+
+.todo-input {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid rgb(11, 12, 41);
+  outline: none;
+  width: 320px;
+  background: transparent;
+  color: black;
+}
+
+.todo-input::placeholder {
+  color: black;
+}
+
+.todo-button {
+  padding: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    rgb(11, 12, 41) 0%,
+    rgb(68, 18, 100) 100%
+  );
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.todo-input.edit {
+  border: 2px solid #149fff;
+}
+
+.todo-button.edit {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgb(149, 188, 240) 100%
+  );
+  padding: 16px 22px;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.todo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    rgb(251, 107, 4) 0%,
+    rgb(244, 138, 97) 100%
+  );
+
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+}
+
+.todo-row:nth-child(4n + 1) {
+  background: linear-gradient(
+    90deg,
+    rgb(22, 21, 23) 0%,
+    rgb(220, 217, 222) 100%
+  );
+}
+
+.todo-row:nth-child(4n + 2) {
+  background: linear-gradient(
+    90deg,
+    rgb(214, 11, 11) 0%,
+    rgb(237, 106, 99) 100%
+  );
+}
+
+.todo-row:nth-child(4n + 3) {
+  background: linear-gradient(
+    90deg,
+    rgb(20, 28, 255) 0%,
+    rgb(135, 133, 243) 100%
+  );
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.delete-icon {
+  margin-right: 5px;
+  color: #fff;
+}
+
+.edit-icon {
+  color: #fff;
+}
 .App {
   text-align: center;
 }
@@ -5,6 +149,189 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+nav {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navbar-image {
+  width: 160px;
+}
+
+.searchbar-container {
+  display: flex;
+  margin: 0px 10px;
+  padding: 0;
+  align-items: center;
+  flex: 1;
+  align-items: stretch;
+}
+
+.searchbar {
+  background: white;
+  padding-right: 20px;
+  flex: 1;
+}
+
+.searchbar input {
+  padding: 10px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  border: none;
+  width: 100%;
+}
+
+.searchbar input:focus {
+  outline: none;
+}
+
+.searchbar-btn button {
+  background-color: #363636;
+  border: none;
+  border-radius: 10px;
+  height: 100%;
+  color: white;
+  padding: 10px 12px;
+  margin-left: 20px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.pokedex-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 18px;
+  padding: 0px 10px 20px 10px;
+}
+
+@media screen and (max-width: 992px) {
+  .pokedex-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pokedex-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.pokemon-card {
+  display: flex;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+}
+
+.pokemon-img-container {
+  padding: 0px 5px;
+}
+
+.pokemon-img {
+  width: 70px;
+  height: 70px;
+}
+
+.pokemon-type {
+  display: flex;
+  color: #282c34;
+}
+
+.pokemon-type-text {
+  margin-right: 10px;
+  text-transform: capitalize;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 10px 10px 10px;
+  flex: 1;
+}
+
+.card-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-top h3 {
+  text-transform: capitalize;
+  color: #282c34;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.App {
+  font-family: sans-serif;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+}
+
+.pagination-btn {
+  background-color: black;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  margin: 0px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.pokemon-heart-btn {
+  border: none;
+  background-color: #f0f0f0;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
+  padding: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.not-found-text {
+  text-align: center;
+  font-size: 1.25rem;
+  padding: 20px;
+}
+
+footer {
+  font-family: inherit;
+  background-color: #363636;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+}
+footer a {
+  color: #e58112;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -35,4 +362,49 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+section {
+  color: #fff;
+  text-shadow: 3px 3px rgba(50,50,70,0.5);
+  background-color: #ffb6b9b0;
+  height: 100vh;  
+}
+.navBg {
+  background-color: #7952b3;
+}
+
+.hachetresHome{
+  color: black;
+}
+
+.parrafoHome{
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-shadow: none;
+  padding: 17px;
+  font-size: 25px;
+}
+
+.hachecuatro{
+  color: black;
+  padding-left: 40px;
+  display: flex;
+  font-size: 40px;
+}
+
+.parrafoHomeone{
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: none;
+  padding: 17px;
+  font-size: 15px;
+}
+
+.parrafoHomedos{
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-shadow: none;
+  padding: 17px;
+  font-size: large;
 }
